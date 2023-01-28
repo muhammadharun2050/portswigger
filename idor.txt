@@ -1,0 +1,3 @@
+                                                Modifying serialized objects
+# প্রথমে একাউন্টে লগইন করতে হবে। তার পর একাউন্টে refresh করে intecept করতে হবে। তার পর কুকির কিংবা header এর ভিতর session cookie আছে চ্যাক করতে হবে। সেই সেশনের ভিতর base64/urlEncode serialized কিছু আছে কিনা check করতে হবে। অবশেষে বুলিয়ান 0 থাকলে 1 দিতে হবে।তারপর url encode করে submit করে দিতে হবে। response এর ভিতর কোনো sensative ডাটা আছে কিনা চেক করতে হবে। সেখানে কোনো path ফেলে resquest header দিয়ে চেক করতে হবে।তারপর এডমিন প্যানেল এর access নেওয়ার চেষ্টা করতে হবে। প্রথমে আমি যে সেশন ইডিট করে দিছি সেই session -ই প্রতেকবার দিতে হবে।  
+ 
