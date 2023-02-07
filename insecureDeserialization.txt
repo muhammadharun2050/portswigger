@@ -1,0 +1,11 @@
+                                         Modifying serialized objects
+# প্রথমে একাউন্টে লগইন করতে হবে। তার পর একাউন্টে refresh করে intecept করতে হবে। তার পর কুকির কিংবা header এর ভিতর session cookie আছে চ্যাক করতে হবে। সেই সেশনের ভিতর base64/urlEncode serialized কিছু আছে কিনা check করতে হবে। অবশেষে বুলিয়ান 0 থাকলে 1 দিতে হবে।তারপর url encode করে submit করে দিতে হবে। response এর ভিতর কোনো sensative ডাটা আছে কিনা চেক করতে হবে। সেখানে কোনো path ফেলে resquest header দিয়ে চেক করতে হবে।তারপর এডমিন প্যানেল এর access নেওয়ার চেষ্টা করতে হবে। প্রথমে আমি যে সেশন ইডিট করে দিছি সেই session -ই প্রতেকবার দিতে হবে।  
+ 
+                                        Modifying serialized data types
+# পরের ল্যাবটি আগের ল্যাবের মতই । শুধু username attribute 2 জায়গায়  13 এর  দিতে হবে wiener এর জায়াগায় দিতে হবে administrator, token এর value দিতে হবে i:0;
+
+                                Using application functionality to exploit insecure deserialization
+# প্রথমে আমার একাউন্টে login করতে হবে । তারপর আমার একাউন্ট delete করতে delete এ ক্লিক করে , intecept করতে হবে। সেই একাউন্টের session আমার একানটের সব তথ্য থাকবে। আমার একাউন্টের সেই সব তথ্যের জায়গায় অন্যের একাউন্ট bruteforce করতে হবে/ আমার অন্য একাউন্টের তথ্য হুবহু দিতে হবে। মুল কথা হচ্ছে আমার একাউনট অন্যের একাউন্ট ডিলিট করে দেওয়া।
+
+                                         Arbitrary object injection in PHP
+#প্রথমে আমার একাউন্টে login করতে হবে । তারপর burpsuite এর site_Map কিংবা যে কোনো এ endpoint যদি এমন থাকে (contact.php ,admin.php, custom_template.php) তাহলে extention এর (~) এরো সাইন দিয়ে response দেখতে হবে ,কোনো ডাটা disclose হচ্ছে কিনা। যাদি থাকে ,তাহিলে session cookie decode করে. 
