@@ -1,0 +1,42 @@
+                  #ssrf vulnerabality#
+1. check stock vunnerabality
+2.remove vulnerable peremeter from 
+stock(stockapi=http://stock.weliketoshop.net:8080/product/stock/check?productId=1&storeId=1)
+ and try(stockapi= http://localhost/admin)
+3.try 
+
+
+ redirection and delete account.
+
+               #Basic SSRF against another back-end system#
+1.remove all peramiter and use new url after peramiter(example:http://192.168.0.1:8080/admin) 
+2. sent to intruder and selet ip last digit(1) and set 1-6000 as you want.
+3.then brute force .
+
+                #SSRF with whitelist-based input filters#
+1.remove url and use loacl ip (http://localhost) if it does not work use 127.0.0.1 or (127.1)	
+2. 127.0.0.1 make it decimal version.
+3. use http://127.1/admin (here 'admin' 'a' double encode) 
+4. after find admin delete panel user and you follow redirection and come back host/admin pannel .
+
+                #SSRF with filter bypass via open redirection vulnerability#
+1. intercept stock and sent repeter
+2. intercept again   and go next product and sent repter. 
+3. next path use first stock path (stockApi=/product/nextProduct?currentProductId=1&
+path=https://192.168.0.1:8080/)
+4. encode url
+5. use localhost (192.168.0.1:8080) and sent intercept alone with slect 1 and bruteforce 
+4.	at last ((stockApi=/product/nextProduct?currentProductId=1&
+path=https://192.168.0.1:8080/admin) 	and delete 
+
+                    mote: must check   "blind ssrf with colabator "
+
+                # SSRF with whitelist-based input filter# 		
+				
+1. cheeck stockapi and change peramiter and use any arbitary url. but it doen not work.
+2. becarefully check response and you find a whitelistb url(stock.weliketoshop.net). this url use stockapi peramir.
+but it does not work. next step bypass ......
+3. (stockApi=localhost:80#@stock.weliketoshop.net) this # symble encode twice .
+4. find /admin and use this and find carlos admin
+
+               # Blind SSRF with Shellshock exploitation #

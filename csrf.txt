@@ -1,1 +1,57 @@
                                             csrf
+1#CSRF vulnerability with no defenses#
+1.just change email                  
+
+                 2#CSRF vulnerability with no defenses#
+1. change Post to GET and POST to GET.chnabge email . remove csrf token(csrf:23dfdsssdgsfgfsgf)     
+            
+            3#CSRF where token validation depends on token being present#
+1. just remove csrf name with token like (csrf=uvROLeZytlDyuv5x0EcHNHUPFByVzfQI) 
+
+            4#CSRF where token is not tied to user session#
+1.try GET to POSt or PoST To Get
+2. remove csrf token
+3.chnage gmail
+4. above to mathod does't work i konw . need csrf token . for this token-> go browser and same  another browser and find update gmail/change email option paste another gmail. at last clik inspect .here you find source code and csrf token.
+
+                5#CSRF where token is tied to non-session cookie#(cookie base injection)
+1. login user name and passwd and update email.
+2. go proxy history and check change email. sent repeater
+3.change csrf and cookie csrf token. for this type token,login another account ->give this account token .
+4. after then go 1st account and go home blog and search anykind of keyworad.
+5. check proxy history and find your recent search keword like  (?search=test),sent it repeater.
+6.use this one  your search keyword after (%0d%0aSet-Cookie:%20csrfKey=YOUR-KEY%20SameSite=None ) 
+note: here csrfkey use 2nd account csrfkey 
+7. at lsat use this script -> <img src="https://YOUR-LAB-ID.web-security-academy.net/search=test%0d%0aSet-Cookie:%20csrfKey=YOUR-KEY%20SameSite=None" onerror="document.forms[0].submit()"> 
+
+             6#CSRF where token is duplicated in cookie#(cookie base injection)
+1.login user name and passwd and update email.
+2. go proxy history and check change email. sent repeater
+3.change csrf give same value like(abcd) and cookie csrf token(abcd)
+4. after then go 1st account and go home blog and search anykind of keyworad.
+5. check proxy history and find your recent search keword like  (?search=test),sent it repeater.
+6.use this one  your search keyword after (%0d%0aSet-Cookie:%20csrfKey=YOUR-KEY%20SameSite=None ) 
+note: here user your 1st tab csrf at same value
+7. at lsat use this script -> <img src="https://YOUR-LAB-ID.web-security-academy.net/?search=test%0d%0aSet-Cookie:%20csrfKey=YOUR-KEY%20SameSite=None" onerror="document.forms[0].submit()"> 
+
+
+                       7#CSRF where Referer validation depends on header being present#
+1. remove (referer:bbbc.com)  
+2.add this on csrf poc header --><meta name="referrer" content="no-referrer">   
+
+                       8#CSRF with broken Referer validation# 
+1.go proxy history and sent it repeter.
+2.change referer ->  https://arbitrary-incorrect-domain.net?YOUR-LAB-ID.web-security-academy.net
+3.csrf poc change -> history.pushState("", "", "/?YOUR-LAB-ID.web-security-academy.net")
+                 
+                         #most importent technique#
+*Using a CSRF token another  accounts
+*Replacing value of same length
+*Removing the CSRF token from requests entirely
+*Decoding CSRF tokens [most of casse it (MD5 or Base64)]
+*Extracting token via HTML injection
+
+                     # tools#
+https://github.com/0xInfection/XSRFProbe.git
+                     # must follow #
+1. payload all the things cheatsheet.		

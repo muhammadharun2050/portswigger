@@ -1,0 +1,25 @@
+   #Authentication bypass via OAuth implicit flow#
+1. login a social media like(facbookk.goole.com,twitter)
+2.go proxy history and find (post /authentication)
+change here gmail and sent and 
+3.right crick on mouse and click request on browser "in original sesson". this sesson paste 
+on browser.			  
+				  
+				  
+			 				  #Forced OAuth profile linking#
+1. 1st login user and passwd then login social media account.then log out. aften then login again social media account.
+2. intercept on and cpoy url.(mouse right click find url options).drop intercept . go browser and look drop 
+url . clear (/) pint and reload . 
+3. go exploit server and store script(<iframe src="example.com>
+ 			  
+		  #Stealing OAuth access tokens via an open redirect#
+1.endpoint at GET /me sent it repeter.
+2.Log out of your account and log back in again. From the proxy history, find the most recent GET /auth?client_id=[...]
+3.including the /../ directory traversal sequence
+4.Confirm that the redirect_uri parameter is in fact vulnerable to directory traversal by changing it to:
+https://YOUR-LAB-ID.web-security-academy.net/oauth-callback/../post?postId=1		   
+				  #SSRF via OpenID dynamic client registration#
+				  
+				  
+				  
+				  #Stealing OAuth access tokens via a proxy page#
