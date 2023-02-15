@@ -1,9 +1,9 @@
-   #Authentication bypass via OAuth implicit flow#
-1. login a social media like(facbookk.goole.com,twitter)
+   						#Authentication bypass via OAuth implicit flow#
+1. login a social media like(facbookk,google,twitter)
 2.go proxy history and find (post /authentication)
 change here gmail and sent and 
-3.right crick on mouse and click request on browser "in original sesson". this sesson paste 
-on browser.			  
+3. after then show reponse in browser , copy it and paste browsr	
+-> impact: এর মাধ্যমে নিজের একাউন্ট থেকে অন্যের একাউন্ট access  নেওয়া যায়।		  
 				  
 				  
 			 				  #Forced OAuth profile linking#
