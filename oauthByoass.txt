@@ -3,16 +3,20 @@
 2.go proxy history and find (post /authentication)
 change here gmail and sent and 
 3. after then show reponse in browser , copy it and paste browsr	
--> impact: এর মাধ্যমে নিজের একাউন্ট থেকে অন্যের একাউন্ট access  নেওয়া যায়।		  
-				  
-				  
+-> impact: এর মাধ্যমে নিজের একাউন্ট থেকে অন্যের একাউন্ট access  নেওয়া যায়।	//this is csrf attack	  
 			 				  #Forced OAuth profile linking#
-1. 1st login user and passwd then login social media account.then log out. aften then login again social media account.
-2. intercept on and cpoy url.(mouse right click find url options).drop intercept . go browser and look drop 
-url . clear (/) pint and reload . 
-3. go exploit server and store script(<iframe src="example.com>
- 			  
-		  #Stealing OAuth access tokens via an open redirect#
+1. 1st login user ,passwd and  then click login social media account and intercept it,but not login.//এখানে আমরা url এর under a "oauth code" পাবো। যেটা আমরা exploit server দিয়ে অন্য account এ link_up  করবো।
+2.cpoy url.(mouse right click find url options).drop intercept . go browser and look drop url . clear (/) pint and reload . 
+3. go exploit server and store script(<iframe src="example.com"></iframe>)
+note:  CSRF attack to attach your own social media profile to the admin user's account on the blog website, then access the admin panel and delete Carlos.
+
+		#Oauth account hijacking via redirect_ur#
+$ login usr and paasswd on socila media / direct .
+$go proxy history adn find (ET /auth?client_id=qdd8k5n3fx7z121ojqqae&redirect_uri=)	, and (GET /oauth-callback?code=) sent two  resquest repeter.
+$change uri website ang give collaborator website.after then take csrf poc generator and paste it expoit server.
+$ atlast check collaborator response. here you find oauth code . paste it (GET /oauth-callback?code= here). and taka show response in browser.
+
+		#Stealing OAuth access tokens via an open redirect#
 1.endpoint at GET /me sent it repeter.
 2.Log out of your account and log back in again. From the proxy history, find the most recent GET /auth?client_id=[...]
 3.including the /../ directory traversal sequence

@@ -3,10 +3,7 @@
 2.remove vulnerable peremeter from 
 stock(stockapi=http://stock.weliketoshop.net:8080/product/stock/check?productId=1&storeId=1)
  and try(stockapi= http://localhost/admin)
-3.try 
-
-
- redirection and delete account.
+3.try redirection and delete account.
 
                #Basic SSRF against another back-end system#
 1.remove all peramiter and use new url after peramiter(example:http://192.168.0.1:8080/admin) 
