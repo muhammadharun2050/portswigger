@@ -1,0 +1,3 @@
+#dirhut //for directory finder 
+$https://github.com/Nekmo/dirhunt.git
+or sudo pip3 install dirhunt
